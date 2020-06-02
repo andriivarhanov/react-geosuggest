@@ -394,7 +394,10 @@ export default class extends React.Component<IProps, IState> {
     if (this.props.onUpdateSuggests) {
       this.props.onUpdateSuggests(suggests, activeSuggest);
     }
-    this.setState({suggests, activeSuggest}, callback);
+    this.setState({
+      suggests: this.props.updateSuggests ? this.props.updateSuggests(suggests, activeSuggest) : suggests,
+      activeSuggest
+    }, callback);
   }
 
   /**

@@ -36,6 +36,10 @@ export default interface IProps {
     suggests: ISuggest[],
     activeSuggest: ISuggest | null
   ) => void;
+  readonly updateSuggests?: (
+    suggests: ISuggest[],
+    activeSuggest: ISuggest | null
+  ) => ISuggest[];
   readonly onActivateSuggest?: (suggest: ISuggest | null) => void;
   readonly onSuggestNoResults?: (userInput: string) => void;
   readonly skipSuggest?: (
